@@ -5,7 +5,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>فرم عضویت و ورود به ناحیه کاربری :: دریافت شده از وب روبیک</title>
-	<link type="text/css" href="css/style.css" rel="stylesheet" />
+	<link type="text/css" href="style/style-log.css" rel="stylesheet" />
 </head>
 <body>
 	<div class="login-page">
