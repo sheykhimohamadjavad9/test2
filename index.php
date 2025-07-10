@@ -25,7 +25,7 @@
             <div class="row">
                <div class="col-md-6">
                   <div class="login">
-                     <a href="login-sign-up.php" class="mybtn"><i class="fa fa-user-plus"></i>ورود و ثبت نام</a>
+                     <a href="register.php" class="mybtn"><i class="fa fa-user-plus"></i>ورود و ثبت نام</a>
                      <a href="#" class="mybtn"><i class="fa fa-cart-arrow-down"></i>سبد</a>  				
                   </div>
                </div>

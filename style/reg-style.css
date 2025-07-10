@@ -1,0 +1,29 @@
+body{
+    background: #fc9294;
+    direction: rtl;
+}
+#reg{
+    background: rgb(255, 255, 255);
+    text-align: center;
+    width: 350px;
+    margin: auto;
+    margin-top: 50px;
+    padding: 5px;
+    padding-top: 20px;
+}
+.value{
+padding: 15px;
+margin: 10px;
+width: 250px;
+border-radius: 10px;
+border-width: 1px;
+
+}
+#button{
+    background-color: #fc9294;
+   padding: 15px;
+   margin: 15px;
+   width: 283px;
+   border: white;
+   border-radius: 15px;
+}
