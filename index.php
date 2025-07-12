@@ -25,7 +25,14 @@
             <div class="row">
                <div class="col-md-6">
                   <div class="login">
+                     <?php  if(isset($_SESSION['username'])):  ?>
+                  <div>
+                        خوش اومدی <?php echo htmlspecialchars($_SESSION['username']);  ?> جان
+                  </div><br>
+                  <div href="#">صفحه کاربری</div>
+                  <?php else: ?>
                      <a href="register.php" class="mybtn"><i class="fa fa-user-plus"></i>ورود و ثبت نام</a>
+                     <?php endif; ?>
                      <a href="#" class="mybtn"><i class="fa fa-cart-arrow-down"></i>سبد</a>  				
                   </div>
                </div>
