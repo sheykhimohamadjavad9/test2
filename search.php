@@ -52,12 +52,19 @@
          <div class="row">
             <?php
             if(isset($_GET['search-btn'])){
-            $search = $_GET['search'];
-            $query = mysqli_query($connect,"SELECT * FROM product WHERE title LIKE '%search%'" );
+            $search = "%{$_GET['search']}%";
+            $stmt_search = mysqli_prepare($connect,"SELECT * FROM product WHERE title LIKE ?" );
+            mysqli_stmt_bind_param($stmt_search, "s", $search);
+            mysqli_stmt_execute($stmt_search);
+            $result_search = mysqli_stmt_get_result($stmt_search);
 
             }elseif(isset($_GET['cat'])){
-            $cat = $_GET['cat'];
-            $query = mysqli_query($connect,"SELECT * FROM product WHERE cat_id = '$cat'" );}
+            $cat = "%{$_GET['cat']}%";
+            $stmt_cat = mysqli_prepare($connect,"SELECT * FROM product WHERE cat_id = ?" );
+            mysqli_stmt_bind_param($stmt_cat, "s", $cat);
+            mysqli_stmt_execute($stmt_cat);
+            $result_cat = mysqli_stmt_get_result($stmt_cat);
+         }
             while ($row = mysqli_fetch_array($query)):
             
             ?>
@@ -71,7 +78,7 @@
                   <ul>
                      <li><i class="fa fa-bars"></i>دسته بندی : <?php  ?></li>
                   </ul>
-                  <a href="single.php?id=<?php echo $row['id'] ?>" class="mybtn"><i class="fa fa-continuous"></i>مشاهده محصول&raquo;</a>	
+                  <a href="single.php?id=<?php echo htmlspecialchars($row['id']) ?>" class="mybtn"><i class="fa fa-continuous"></i>مشاهده محصول&raquo;</a>	
                </div>
             </div>
             <?php endwhile;

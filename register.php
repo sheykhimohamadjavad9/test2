@@ -40,7 +40,7 @@ $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 $username = $_POST['reg-name'];
 $email = $_POST['reg-email'];
-$password = password_hash($_post['reg-password'], PASSWORD_DEFAULT);
+$password = password_hash($_POST['reg-password'], PASSWORD_DEFAULT);
 
 $stmt = $pdo->prepare("INSERT INTO people (username, email, password) VALUE (?,?,?) ");
 $stmt->execute([$usernamr, $email, $password]);

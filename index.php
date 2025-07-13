@@ -1,4 +1,6 @@
-<?php  require_once 'db.php';  ?>
+<?php  require_once 'db.php';  
+session_start();
+?>
 <!doctype html>
 <html>
    <head>
@@ -27,9 +29,9 @@
                   <div class="login">
                      <?php  if(isset($_SESSION['username'])):  ?>
                   <div>
-                        خوش اومدی <?php echo htmlspecialchars($_SESSION['username']);  ?> جان
+                        خوش اومدی <?php echo htmlspecialchars($_SESSION['username']);  ?> 
                   </div><br>
-                  <div href="#">صفحه کاربری</div>
+                  <a href="#" class="mybtn"><i class="fa fa-user-plus"></i>صفحه کاربری</a>
                   <?php else: ?>
                      <a href="register.php" class="mybtn"><i class="fa fa-user-plus"></i>ورود و ثبت نام</a>
                      <?php endif; ?>
@@ -135,7 +137,7 @@
                   ?>
                      <div class="item">
                         <figure>
-                           <a href="search.php?cat=<?php echo $row['id'] ?>"><img src="img/<?php echo $row ['image']  ?>" class="w-100" /></a>
+                           <a href="search.php?cat=<?php echo htmlspecialchars($row['id']) ?>"><img src="img/<?php echo $row ['image']  ?>" class="w-100" /></a>
                         </figure>
                         <h5><?php echo $row ['title']  ?></h5>
                         <span><?php echo $row ['price']  ?> تومان</span>
@@ -170,7 +172,7 @@
                   ?>
                      <div class="item">
                         <figure>
-                           <a href="search.php?cat=<?php echo $row['id'] ?>"><img src="img/<?php echo $row ['cat_image']  ?>" class="w-100" /></a>
+                           <a href="search.php?cat=<?php echo htmlspecialchars($row['id']) ?>"><img src="img/<?php echo $row ['cat_image']  ?>" class="w-100" /></a>
                         </figure>
                         <h5><?php echo $row ['cat_name']  ?></h5>
                         
@@ -205,7 +207,7 @@
                   ?>
                      <div class="item">
                         <figure>
-                           <a href="search.php?cat=<?php echo $row['id'] ?>"><img src="img/<?php echo $row ['image']  ?>" class="w-100" /></a>
+                           <a href="search.php?cat=<?php echo htmlspecialchars($row['id']) ?>"><img src="img/<?php echo $row ['image']  ?>" class="w-100" /></a>
                         </figure>
                         <h5><?php echo $row ['title']  ?></h5>
                         <span><?php echo $row ['price']  ?> تومان</span>
