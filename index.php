@@ -39,7 +39,7 @@ session_start();
                   </div>
                </div>
                <div class="col-md-6">
-                  <form action="search.php" method="get">
+                  <form action="search.php" method="POST">
                      <input type="text" name="search" placeholder="کالای مورد نظر را جستجو کنید">
                      <button type="submit" name="search-btn"><i class="fa fa-search"></i></button>
                   </form>

@@ -3,7 +3,7 @@
 <html>
    <head>
       <meta charset="utf-8">
-      <title>Easy Shop</title>
+      <title>جستجو محصول</title>
       <link href="style/font-awesome.css" rel="stylesheet" type="text/css">
       <link href="style/bootstrap.css" rel="stylesheet" type="text/css">
       <link href="style/owl.carousel.css" rel="stylesheet" type="text/css">
@@ -53,7 +53,7 @@
             <?php
             if(isset($_GET['search-btn'])){
             $search = "%{$_GET['search']}%";
-            $stmt_search = mysqli_prepare($connect,"SELECT * FROM product WHERE title LIKE ?" );
+            $stmt_search = mysqli_prepare($connect,"SELECT * FROM products WHERE title LIKE ?" );
             mysqli_stmt_bind_param($stmt_search, "s", $search);
             mysqli_stmt_execute($stmt_search);
             $result_search = mysqli_stmt_get_result($stmt_search);
@@ -65,7 +65,7 @@
             mysqli_stmt_execute($stmt_cat);
             $result_cat = mysqli_stmt_get_result($stmt_cat);
          }
-            while ($row = mysqli_fetch_array($query)):
+            while ($row = mysqli_fetch_array($result_cat)):
             
             ?>
          <div class="col-md-4">
