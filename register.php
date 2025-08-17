@@ -44,18 +44,12 @@ $reg_username = $_POST['reg-name'];
 $reg_email = $_POST['reg-email'];
 $reg_password_raw = $_POST['reg-password'];
 
-if (empty($_POST["reg_name"]) or
-    empty($_POST["reg_email"]) or
-    empty($_POST["reg_password"])
+if ($reg_username == "" || $reg_email == "" || $reg_password_raw == "") {
+        echo "تمام فیلدها باید پر شوند.";
+        exit;
+    }
 
-    ){
-die("لطفا تمام فیلد ها را پر کنید");
 
-}
-
-if(!preg_match('/^[a-zA-Z0-9_]{3-20}$/', $reg_username)){
-    die("نام کاربری معتبر نیست");
-}
 
 if(!filter_var($reg_email, FILTER_VALIDATE_EMAIL)){
     die("ایمیل معتبر نیست");
