@@ -101,10 +101,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             echo $get_cat['cat_name']; 
             ?></td>
             <td><?php echo $row['price']; ?></td>
-            <td>
-              <button class="btn-edit">ویرایش</button>
-              <button class="btn-delete">حذف</button>
-            </td>
+            <form method="POST" action="delete_product.php" onsubmit="return confirm('آیا مطمئن هستید که می‌خواهید این محصول را حذف کنید؟');" style="display:inline;">
+             <input type="hidden" name="product_id" value="<?php echo $row['id']; ?>">
+             <button type="submit" class="btn-delete">حذف</button>
+            </form>
+
           </tr>
           
         </tbody>
@@ -134,8 +135,10 @@ function usersedit($connect){ ?>
             <td><?php echo $row['username'];  ?></td>
             <td><?php echo $row['email']; ?></td>
             <td>
-              <button class="btn-edit">ویرایش</button>
-              <button class="btn-delete">حذف</button>
+             <form method="POST" action="delete_product.php" onsubmit="return confirm('آیا مطمئن هستید که می‌خواهید این کاربر را حذف کنید؟');" style="display:inline;">
+             <input type="hidden" name="product_id" value="<?php echo $row['id']; ?>">
+             <button type="submit" class="btn-delete">حذف</button>
+            </form>
             </td>
           </tr>
           
